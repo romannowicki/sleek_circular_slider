@@ -135,9 +135,7 @@ double percentageToValue(double percentage, double min, double max) {
 
 double percentageToAngle(double percentage, double angleRange) {
   final step = angleRange / 100;
-  if (percentage > 100) {
-    return angleRange;
-  } else if (percentage < 0) {
+  if (percentage < 0) {
     return 0.5;
   }
   return percentage * step;
@@ -149,9 +147,7 @@ double angleToValue(double angle, double min, double max, double angleRange) {
 
 double angleToPercentage(double angle, double angleRange) {
   final step = angleRange / 100;
-  if (angle > angleRange) {
-    return 100;
-  } else if (angle < 0.5) {
+  if (angle < 0.5) {
     return 0;
   }
   return angle / step;
